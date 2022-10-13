@@ -1,19 +1,15 @@
-import styled from 'styled-components'
-
-const Root = styled.div`
-	background-image: url('assets/IMG_3060.jpg');
-`
+import * as Styles from './styles'
 
 const Welcome = () => {
 	return (
-		<Root>
-			<h2>
+		<Styles.Root>
+			<Styles.Title>
 				Alexander Bazan
-			</h2>
-			<h5>
+			</Styles.Title>
+			<Styles.Subtitle>
 				Skilled frontend developer with attention to customer needs
-			</h5>
-		</Root>
+			</Styles.Subtitle>
+		</Styles.Root>
 	)
 }
 

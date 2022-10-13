@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Header from '../components/Header'
 import Welcome from '../components/home/sections/Welcome'
 import styles from '../styles/Home.module.css'
 
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Header />
         <Welcome />
       </main>
 
