@@ -6,7 +6,7 @@ import * as Styles from './styles'
  * 2. Sophisticated website maintenance / support - finishing something in works, bugfixing
  */
 
-const Perks = () => {
+const PerksSection = () => {
 	return (
 		<Styles.Root>
 			<Styles.Bullet>
@@ -33,4 +33,4 @@ const Perks = () => {
 	)
 }
 
-export default Perks
+export default PerksSection
