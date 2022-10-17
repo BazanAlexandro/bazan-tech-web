@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { COLORS } from '../../constants/colors'
 
 export const Root = styled.div`
-	background: #5a124ecf;
+	background: ${COLORS.primary};
 	box-shadow: 0 0 10px rgb(0 0 0 / 65%);
 	position: fixed;
 	left: 0;
