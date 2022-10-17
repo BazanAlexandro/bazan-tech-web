@@ -16,6 +16,10 @@ const Header = () => {
 				<a>
 					telegram
 				</a>
+				/
+				<a>
+					upwork
+				</a>
 			</Styles.ContactsPanel>
 
 			<Styles.NavigationPanel>

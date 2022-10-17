@@ -1,17 +1,34 @@
 import * as Styles from './styles'
 
+/**
+ * 7 years of experience in the middle
+ * 1. Landing page development - proceed the rise of your personal brand, more customized brand options, increase sales
+ * 2. Sophisticated website maintenance / support - finishing something in works, bugfixing
+ */
+
 const Perks = () => {
 	return (
 		<Styles.Root>
-			7 years of commercial experience
+			<Styles.Bullet>
+				<Styles.BulletHeader>
+					Landing page development
+				</Styles.BulletHeader>
+				proceed the rise of your personal brand, more customized brand options, increase sales
+			</Styles.Bullet>
 
-			Full Stack Website Developer
+			<Styles.Bullet>
+				<Styles.HeaderCoutner>
+					7+
+				</Styles.HeaderCoutner>
+				years of commercial experience
+			</Styles.Bullet>
 
-			Responsive Website and Feature development of Single Page Apps as well as Server-Side ones with React, Typescript, Next.js
-
-			Bug resolving of scripting issues, browser inconsistencies, styling errors
-
-			Performance optimizations, SEO, Google PageSpeed insights
+			<Styles.Bullet>
+				<Styles.BulletHeader>
+					Website support
+				</Styles.BulletHeader>
+				bug resolving of scripting issues, browser inconsistencies, styling errors
+			</Styles.Bullet>
 		</Styles.Root>
 	)
 }
