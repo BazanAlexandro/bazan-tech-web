@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Header from '../components/Header'
+import CVSection from '../components/home/sections/CV'
 import Perks from '../components/home/sections/Perks'
 import TestimonialsSection from '../components/home/sections/Testimonials'
 import Welcome from '../components/home/sections/Welcome'
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
         <Welcome />
         <Perks />
         <TestimonialsSection />
+        <CVSection />
       </main>
 
       <footer className={styles.footer}>
