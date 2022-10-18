@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { COLORS } from '../../constants/colors'
 
 export const Root = styled.div`
+	position: relative;
+	z-index: 10;
 	background: ${COLORS.primary};
 	box-shadow: 0 0 10px rgb(0 0 0 / 65%);
 	position: fixed;

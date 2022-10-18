@@ -9,6 +9,7 @@ export const Root = styled.div`
 	align-items: center;
 	padding: 1em 3em;
 	gap: 2em;
+	position: relative;
 `
 
 export const Bullet = styled.div`

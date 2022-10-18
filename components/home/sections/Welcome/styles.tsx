@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { COLORS } from '../../../../constants/colors'
 
 export const Root = styled.div`
-	background: url(assets/IMG_3060.jpg);
+	background: url(assets/Welcome_BG.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	width: 100%;
@@ -10,9 +10,10 @@ export const Root = styled.div`
 	background-position-y: -35px;
 	display: flex;
     flex-direction: column;
-    gap: 1em;
     justify-content: center;
     align-items: center;
+	position: relative;
+	overflow: hidden;
 `
 
 export const Title = styled.h2`
@@ -24,4 +25,26 @@ export const Title = styled.h2`
 
 export const Subtitle = styled(Title)`
 	font-size: 1em;
+`
+
+export const BGVideo = styled.video`
+	position: absolute;
+	min-width: 100vw;
+	min-height: 100vh;
+	filter: brightness(0.85);
+`
+
+export const Fg = styled.img`
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	z-index: 0;
+	filter: drop-shadow(2px 4px 6px black);
+`
+
+export const TextContainer = styled.div`
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `
