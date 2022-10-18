@@ -1,3 +1,4 @@
+import { animated } from 'react-spring'
 import styled from 'styled-components'
 import { COLORS } from '../../constants/colors'
 
@@ -28,5 +29,11 @@ export const NavigationPanel = styled.div`
 	gap: 1em;
 	height: 100%;
 	padding-right: 3em;
+	align-items: center;
+`
+
+export const HeaderItem = styled(animated.div)`
+	display: flex;
+	gap: 1em;
 	align-items: center;
 `

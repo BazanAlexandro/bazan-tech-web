@@ -1,3 +1,4 @@
+import { animated } from 'react-spring'
 import styled from 'styled-components'
 import { COLORS } from '../../../../constants/colors'
 
@@ -12,7 +13,7 @@ export const Root = styled.div`
 	position: relative;
 `
 
-export const Bullet = styled.div`
+export const Bullet = styled(animated.div)`
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -24,7 +25,8 @@ export const BulletHeader = styled.h2`
 	margin: 0;
 `
 
-export const HeaderCoutner = styled.h2`
+export const HeaderCoutner = styled(animated.h2)`
+	width: 200px;
 	margin: 0;
 	font-size: 11rem;
 `

@@ -1,7 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import * as Styles from './styles'
-
-const MAX_OFFSET = 100
 
 function getOffset(delta: number): number {
 	if (Math.abs(delta) > 100) return Math.sign(delta) * 100
@@ -12,7 +10,7 @@ const Welcome = () => {
 	const [top, setTop] = useState(0)
 	const [left, setLeft] = useState(0)
 
-	const videoStyle = useMemo(() => ({
+	const bgStyle = useMemo(() => ({
 		transform: `translate(${-left}px,${-top}px) scale(1.2)`
 	}), [left, top])
 
@@ -27,11 +25,10 @@ const Welcome = () => {
 
 	return (
 		<Styles.Root onMouseMove={handleMouseMove}>
-			<Styles.BGVideo muted loop autoPlay src="/assets/Welcome_BG_Video.mov" style={videoStyle}>
-			</Styles.BGVideo>
+			<Styles.Bg style={bgStyle} />
 			<Styles.Fg src="/assets/Person.png" style={fgStyle} />
 
-			<Styles.TextContainer style={videoStyle}>
+			<Styles.TextContainer style={bgStyle}>
 				<Styles.Title>
 					Alexander Bazan
 				</Styles.Title>

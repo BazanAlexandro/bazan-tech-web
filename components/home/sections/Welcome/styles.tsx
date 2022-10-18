@@ -2,9 +2,6 @@ import styled from 'styled-components'
 import { COLORS } from '../../../../constants/colors'
 
 export const Root = styled.div`
-	background: url(assets/Welcome_BG.jpg);
-	background-size: cover;
-	background-attachment: fixed;
 	width: 100%;
     height: 100vh;
 	background-position-y: -35px;
@@ -27,7 +24,10 @@ export const Subtitle = styled(Title)`
 	font-size: 1em;
 `
 
-export const BGVideo = styled.video`
+export const Bg = styled.img`
+	background: url(assets/Welcome_BG.jpg);
+	background-size: cover;
+	background-attachment: fixed;
 	position: absolute;
 	min-width: 100vw;
 	min-height: 100vh;
