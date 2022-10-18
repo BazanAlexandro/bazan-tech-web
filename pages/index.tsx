@@ -28,9 +28,6 @@ const Home: NextPage = () => {
         <CVSection />
         <ContactSection />
       </main>
-
-      <footer className={styles.footer}>
-      </footer>
     </div>
   )
 }
