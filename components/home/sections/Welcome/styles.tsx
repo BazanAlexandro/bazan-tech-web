@@ -25,7 +25,7 @@ export const Subtitle = styled(Title)`
 `
 
 export const Bg = styled.img`
-	background: url(assets/Welcome_BG.jpg);
+	background: url(assets/BG_2.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	position: absolute;
