@@ -8,7 +8,6 @@ export const Root = styled.div`
 	justify-content: center;
 	background: ${COLORS.lighter};
 	color: ${COLORS.secondary};
-	margin: 0 1em;
 	padding: 1em;
 	min-width: 30em;
 	height: 20em;
