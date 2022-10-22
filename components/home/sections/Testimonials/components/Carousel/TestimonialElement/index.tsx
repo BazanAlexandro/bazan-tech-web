@@ -9,7 +9,7 @@ const TestimonialElement = ({
 	item
 }: Props) => {
 	return (
-		<Styles.Root>
+		<Styles.Root className="testimonial-el">
 			<Styles.HeroTitle>
 				<Styles.Img />
 				<Styles.CompanyImg />

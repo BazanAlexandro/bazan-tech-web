@@ -12,6 +12,7 @@ export const Root = styled.div`
 	min-width: 30em;
 	height: 20em;
 	gap: 0.5em;
+	will-change: transform, opacity, z-index;
 `
 
 export const HeroTitle = styled.div`

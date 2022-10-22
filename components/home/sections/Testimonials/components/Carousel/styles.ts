@@ -9,5 +9,7 @@ export const ScrollableWrapper = styled.div`
 	display: flex;
 	flex-wrap: nowrap;
 	overflow: auto;
-	gap: 1em;
+	gap: 3em;
+	perspective: 1000px;
+	padding: 0 calc(100vw / 3);
 `
