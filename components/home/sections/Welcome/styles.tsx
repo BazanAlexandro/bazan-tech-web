@@ -32,6 +32,7 @@ export const Bg = styled.img`
 	min-width: 100vw;
 	min-height: 100vh;
 	filter: brightness(0.85);
+	will-change: transform;
 `
 
 export const Fg = styled.img`
@@ -40,6 +41,7 @@ export const Fg = styled.img`
 	top: 20%;
 	z-index: 0;
 	filter: drop-shadow(2px 4px 6px black);
+	will-change: transform;
 `
 
 export const TextContainer = styled.div`
@@ -47,4 +49,5 @@ export const TextContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	will-change: transform;
 `
