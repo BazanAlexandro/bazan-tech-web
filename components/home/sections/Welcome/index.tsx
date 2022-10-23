@@ -15,7 +15,7 @@ const Welcome = () => {
 	}), [left, top])
 
 	const fgStyle = useMemo(() => ({
-		transform: `translate(${left}px,${top}px) scale(0.5)`
+		transform: `translate(${left}px,${top}px)`
 	}), [left, top])
 
 	const handleMouseMove = useCallback((e: any) => {
@@ -26,7 +26,7 @@ const Welcome = () => {
 	return (
 		<Styles.Root onMouseMove={handleMouseMove}>
 			<Styles.Bg style={bgStyle} />
-			<Styles.Fg src="/assets/FG_2.png" style={fgStyle} />
+			<Styles.Fg src="/assets/Person.png" style={fgStyle} />
 
 			<Styles.TextContainer style={bgStyle}>
 				<Styles.Title>

@@ -13,6 +13,24 @@ const ARROW_MIN_OFFSET = 30
 
 // onScroll (and on render I guess), check position of element. If it's near viewport center, then transform3d fine
 
+function updateCarousel() {
+	const elements = [...document.getElementsByClassName('testimonial-el')]as HTMLDivElement[]
+
+	elements.forEach((e, i) => {
+		const { x: elemX, width: elemWidth } = e.getBoundingClientRect()
+
+		if (elemX < 0) return
+		const elemCenter = Math.abs(document.body.clientWidth / 2 - elemX - elemWidth / 2)
+
+		const OPACITY_FADE_OFFSET = 150
+		e.style.transform = `translateZ(${-elemCenter}px)`
+
+		const opacity = Math.min(OPACITY_FADE_OFFSET / elemCenter, 1)
+		e.style.opacity = opacity.toString()
+		e.style.zIndex = Math.floor(opacity * 10).toString();
+	})
+}
+
 const TestimonialCarousel = ({
 	items
 }: Props) => {
@@ -29,30 +47,16 @@ const TestimonialCarousel = ({
 		))
 	}, [items])
 
+	useEffect(() => {
+		updateCarousel()
+	}, [])
+
 	// remake to intersection observer
 	const scrollHandler = useCallback((e: any) => {
 		setLeftVisible(e.target.scrollLeft > ARROW_MIN_OFFSET)
 		setRightVisible(e.target.scrollLeft < e.target.scrollWidth - e.target.clientWidth - ARROW_MIN_OFFSET)
 
-		const { x, width } = scrollableRef.current?.getBoundingClientRect() ?? { x: 0, width: 0 }
-		const center = (width + x) / 2
-
-		const elements = [...document.getElementsByClassName('testimonial-el')]as HTMLDivElement[]
-
-		elements.forEach((e, i) => {
-			const { x: elemX, width: elemWidth } = e.getBoundingClientRect()
-
-			if (elemX < 0) return
-			const elemCenter = Math.abs(document.body.clientWidth / 2 - elemX - elemWidth / 2)
-			// const offset = Math.abs(center - elemCenter)
-
-			const OPACITY_FADE_OFFSET = 150
-			e.style.transform = `translateZ(${-elemCenter}px)`
-
-			const opacity = Math.min(OPACITY_FADE_OFFSET / elemCenter, 1)
-			e.style.opacity = opacity.toString()
-			e.style.zIndex = Math.floor(opacity * 10).toString();
-		})
+		updateCarousel()
 	}, [])
 
 	return (
