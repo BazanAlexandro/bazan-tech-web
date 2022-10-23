@@ -12,7 +12,6 @@ export const Root = styled.div`
 	min-width: 30em;
 	height: 20em;
 	gap: 0.5em;
-	will-change: transform, z-index, filter;
 	box-shadow: 0 0 10px rgb(0 0 0 / 30%);
 `
 
