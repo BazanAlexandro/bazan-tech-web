@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { TestimonialType } from "../../../../../../types/Testimonial"
 import TestimonialElement from "./TestimonialElement"
 import * as Styles from './styles'
@@ -9,24 +9,22 @@ type Props = {
 	items: TestimonialType[]
 }
 
+const Z_INDEX_OFFSET = 150
 const ARROW_MIN_OFFSET = 30
-
-// onScroll (and on render I guess), check position of element. If it's near viewport center, then transform3d fine
 
 function updateCarousel() {
 	const elements = [...document.getElementsByClassName('testimonial-el')]as HTMLDivElement[]
 
-	elements.forEach((e, i) => {
+	elements.forEach(e => {
 		const { x: elemX, width: elemWidth } = e.getBoundingClientRect()
 
 		if (elemX < 0) return
 		const elemCenter = Math.abs(document.body.clientWidth / 2 - elemX - elemWidth / 2)
 
-		const OPACITY_FADE_OFFSET = 150
 		e.style.transform = `translateZ(${-elemCenter}px)`
 
-		const opacity = Math.min(OPACITY_FADE_OFFSET / elemCenter, 1)
-		e.style.zIndex = Math.floor(opacity * 10).toString()
+		const zIndex = Math.min(Z_INDEX_OFFSET / elemCenter, 1) * 10
+		e.style.zIndex = Math.floor(zIndex * 10).toString()
 	})
 }
 

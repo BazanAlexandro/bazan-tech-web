@@ -12,4 +12,5 @@ export const ScrollableWrapper = styled.div`
 	gap: 3em;
 	perspective: 1000px;
 	padding: 0 calc(100vw / 3);
+	padding-top: 1em;
 `

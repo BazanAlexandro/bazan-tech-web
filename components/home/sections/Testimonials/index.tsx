@@ -2,14 +2,16 @@ import { TestimonialType } from '../../../../types/Testimonial'
 import TestimonialCarousel from './components/Carousel'
 import * as Styles from './styles'
 
-const items: TestimonialType[] = Array(10).fill({
-	author: 'Test',
-	authorImage: '/img.jpg',
+const items: TestimonialType[] = Array(4).fill({
+	author: 'Kianu Reeves',
+	authorImage: '/reviewer.jpeg',
 	authorPosition: 'CEO',
 	company: 'Microsoft',
 	companyLink: 'https://www.microsoft.com',
-	companyImage: '/company-img.jpg',
-	text: 'Excellent work. Really nice to work with, easy to get along, nice work ethic. Will definitely recomment!'
+	companyImage: '/company-icon.png',
+	text: `Excellent work. Really nice to work with, easy to get along, nice work ethic. Will definitely recomment!
+	Excellent work. Really nice to work with, easy to get along, nice work ethic. Will definitely recomment!
+	Excellent work. Really nice to work with, easy to get along, nice work ethic. Will definitely recomment!`
 })
 
 const TestimonialsSection = () => {
