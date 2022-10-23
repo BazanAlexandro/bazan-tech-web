@@ -26,8 +26,9 @@ function updateCarousel() {
 		e.style.transform = `translateZ(${-elemCenter}px)`
 
 		const opacity = Math.min(OPACITY_FADE_OFFSET / elemCenter, 1)
-		e.style.opacity = opacity.toString()
-		e.style.zIndex = Math.floor(opacity * 10).toString();
+		// e.style.opacity = opacity.toString()
+		e.style.zIndex = Math.floor(opacity * 10).toString()
+		e.style.filter = `blur(${elemCenter / 100}px)`
 	})
 }
 
