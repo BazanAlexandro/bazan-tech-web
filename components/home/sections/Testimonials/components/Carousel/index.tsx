@@ -28,6 +28,32 @@ function updateCarousel() {
 	})
 }
 
+function getElementDistances() {
+	const elements = [...document.getElementsByClassName('testimonial-el')]as HTMLDivElement[]
+
+	let result: { index: number, distance: number, el: HTMLDivElement }[] = []
+
+	elements.forEach((el, index) => {
+		const { x: elemX, width: elemWidth } = el.getBoundingClientRect()
+
+		const oldTransform = el.style.transform
+		el.style.transform = `translateZ(0px)`
+
+		const distance = -(document.body.clientWidth / 2 - elemX - elemWidth / 2)
+		el.style.transform = oldTransform
+
+		result.push({
+			index,
+			distance,
+			el
+		})
+	})
+
+	return result
+}
+
+const DISTANCE_THRESHOLD = 50
+
 const TestimonialCarousel = ({
 	items
 }: Props) => {
@@ -56,6 +82,42 @@ const TestimonialCarousel = ({
 		updateCarousel()
 	}, [])
 
+	const handleClickLeft = useCallback(() => {
+		if (!scrollableRef.current) return
+
+		const distances = getElementDistances()
+		.filter(d => d.distance < 0 && Math.abs(d.distance) > DISTANCE_THRESHOLD)
+
+		if (!distances.length) return
+
+		const nearest = distances[distances.length - 1]
+
+		scrollableRef.current.scroll({
+			top: 0,
+			left: scrollableRef.current.scrollLeft + nearest.distance,
+			behavior: 'smooth'
+		})
+	}, [])
+
+	const handleClickRight = useCallback(() => {
+		if (!scrollableRef.current) return
+
+		const distances = getElementDistances()
+		.filter(d => d.distance > 0 && Math.abs(d.distance) > DISTANCE_THRESHOLD)
+
+		if (!distances.length) return
+
+		const nearest = distances[0]
+
+		console.log('nearest', nearest)
+
+		scrollableRef.current.scroll({
+			top: 0,
+			left: scrollableRef.current.scrollLeft + nearest.distance,
+			behavior: 'smooth'
+		})
+	}, [])
+
 	return (
 		<Styles.Root>
 			<Styles.ScrollableWrapper
@@ -63,8 +125,8 @@ const TestimonialCarousel = ({
 				onScroll={scrollHandler}>
 				{components}
 			</Styles.ScrollableWrapper>
-			<LeftArrow visible={leftVisible} />
-			<RightArrow visible={rightVisible} />
+			<LeftArrow onClick={handleClickLeft} visible={leftVisible} />
+			<RightArrow onClick={handleClickRight} visible={rightVisible} />
 		</Styles.Root>
 	)
 }

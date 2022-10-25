@@ -43,24 +43,37 @@ const ArrowBase = styled.button<{ visible?: boolean, direction: Direciton }>`
 
 type Props = {
 	visible?: boolean
+	onClick: () => void
 }
 
 export const LeftArrow = ({
-	visible
+	visible,
+	onClick
 }: Props) => {
 	return (
-		<ArrowBase visible={visible} style={{ left: 0 }} direction="left">
-			<LeftIcon sx={{ color: 'white' }} />
+		<ArrowBase
+			// onClick={onClick}
+			visible={visible}
+			style={{ left: 0 }}
+			direction="left"
+		>
+			{/* <LeftIcon sx={{ color: 'white' }} /> */}
 		</ArrowBase>
 	)
 }
 
 export const RightArrow = ({
-	visible
+	visible,
+	onClick
 }: Props) => {
 	return (
-		<ArrowBase visible={visible} style={{ right: 0 }} direction="right">
-			<RightIcon sx={{ color: 'white' }} />
+		<ArrowBase
+			// onClick={onClick}
+			visible={visible}
+			style={{ right: 0 }}
+			direction="right"
+		>
+			{/* <RightIcon sx={{ color: 'white' }} /> */}
 		</ArrowBase>
 	)
 }
