@@ -1,4 +1,4 @@
-import { animated } from 'react-spring'
+import { animated, config, useSpring } from 'react-spring'
 import styled from 'styled-components'
 import { COLORS } from '../../../../../constants/colors'
 import { ExperienceType } from "../../../../../types/Experience"
@@ -18,10 +18,8 @@ const Details = styled.div`
 	gap: 1.5em;
 `
 
-const Duration = styled.div`
+const Duration = styled(animated.div)`
 	font-size: 7rem;
-	// white-space: nowrap;
-	background: linear-gradient(45deg, ${COLORS.light}, ${COLORS.lighter});
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 0.1em;
@@ -64,6 +62,17 @@ const Experience = ({
 	isLast,
 	style
 }: Props) => {
+	const durationSpring = useSpring({
+		from: {
+			background: `linear-gradient(0deg, ${COLORS.light}, ${COLORS.lighter})`,
+			'-webkit-background-clip': 'text'
+		},
+		background: `linear-gradient(360deg, ${COLORS.light}, ${COLORS.lighter})`,
+		'-webkit-background-clip': 'text',
+		loop: true,
+		config: config.molasses
+	})
+
 	return (
 		<>
 			<Root style={style}>
@@ -81,7 +90,7 @@ const Experience = ({
 					</BulletList>
 				</Details>
 
-				<Duration>
+				<Duration style={durationSpring}>
 					<div>
 						{item.duration[1]}
 					</div>
