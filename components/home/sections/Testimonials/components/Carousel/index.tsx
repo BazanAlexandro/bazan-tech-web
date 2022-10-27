@@ -4,13 +4,13 @@ import TestimonialElement from "./TestimonialElement"
 import * as Styles from './styles'
 import { LeftArrow, RightArrow } from "./Arrows"
 import { useCallback } from "react"
+import { getStyleValue } from "../../../../../../utils/getStyleValue"
 
 type Props = {
 	items: TestimonialType[]
 }
 
 const Z_INDEX_OFFSET = 150
-const ARROW_MIN_OFFSET = 30
 
 function updateCarousel() {
 	const elements = [...document.getElementsByClassName('testimonial-el')]as HTMLDivElement[]
@@ -36,11 +36,7 @@ function getElementDistances() {
 	elements.forEach((el, index) => {
 		const { x: elemX, width: elemWidth } = el.getBoundingClientRect()
 
-		const oldTransform = el.style.transform
-		el.style.transform = `translateZ(0px)`
-
 		const distance = -(document.body.clientWidth / 2 - elemX - elemWidth / 2)
-		el.style.transform = oldTransform
 
 		result.push({
 			index,
@@ -50,6 +46,22 @@ function getElementDistances() {
 	})
 
 	return result
+}
+
+function calculateLeftOffset(container: HTMLDivElement, el?: HTMLDivElement): number {
+	const paddingLeft = getStyleValue(container, 'padding-left')
+
+	const elem = el ?? document.getElementsByClassName('testimonial-el').item(0) as HTMLDivElement
+
+	return (elem.offsetWidth / 2 -  (container.clientWidth / 2 - paddingLeft))
+}
+
+function calculateScrollOffset(container: HTMLDivElement, el: HTMLDivElement, index: number): number {
+	const gap = getStyleValue(container, 'gap')
+	const elementWidth = el.offsetWidth
+	const leftOffset = calculateLeftOffset(container, el)
+
+	return index * (elementWidth + gap) + leftOffset
 }
 
 const DISTANCE_THRESHOLD = 50
@@ -76,8 +88,10 @@ const TestimonialCarousel = ({
 
 	// remake to intersection observer
 	const scrollHandler = useCallback((e: any) => {
-		setLeftVisible(e.target.scrollLeft > ARROW_MIN_OFFSET)
-		setRightVisible(e.target.scrollLeft < e.target.scrollWidth - e.target.clientWidth - ARROW_MIN_OFFSET)
+		const minOffset = scrollableRef.current ? calculateLeftOffset(scrollableRef.current) + DISTANCE_THRESHOLD : 0
+
+		setLeftVisible(e.target.scrollLeft > minOffset)
+		setRightVisible(e.target.scrollLeft < e.target.scrollWidth - e.target.clientWidth - minOffset)
 
 		updateCarousel()
 	}, [])
@@ -90,11 +104,11 @@ const TestimonialCarousel = ({
 
 		if (!distances.length) return
 
-		const nearest = distances[distances.length - 1]
+		const { el, index } = distances[distances.length - 1]
 
 		scrollableRef.current.scroll({
 			top: 0,
-			left: scrollableRef.current.scrollLeft + nearest.distance,
+			left: calculateScrollOffset(scrollableRef.current, el, index),
 			behavior: 'smooth'
 		})
 	}, [])
@@ -107,13 +121,11 @@ const TestimonialCarousel = ({
 
 		if (!distances.length) return
 
-		const nearest = distances[0]
-
-		console.log('nearest', nearest)
+		const { index, el } = distances[0]
 
 		scrollableRef.current.scroll({
 			top: 0,
-			left: scrollableRef.current.scrollLeft + nearest.distance,
+			left: calculateScrollOffset(scrollableRef.current, el, index),
 			behavior: 'smooth'
 		})
 	}, [])

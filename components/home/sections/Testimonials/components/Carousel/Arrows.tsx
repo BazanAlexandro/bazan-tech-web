@@ -52,12 +52,12 @@ export const LeftArrow = ({
 }: Props) => {
 	return (
 		<ArrowBase
-			// onClick={onClick}
+			onClick={onClick}
 			visible={visible}
 			style={{ left: 0 }}
 			direction="left"
 		>
-			{/* <LeftIcon sx={{ color: 'white' }} /> */}
+			<LeftIcon sx={{ color: 'white' }} />
 		</ArrowBase>
 	)
 }
@@ -68,12 +68,12 @@ export const RightArrow = ({
 }: Props) => {
 	return (
 		<ArrowBase
-			// onClick={onClick}
+			onClick={onClick}
 			visible={visible}
 			style={{ right: 0 }}
 			direction="right"
 		>
-			{/* <RightIcon sx={{ color: 'white' }} /> */}
+			<RightIcon sx={{ color: 'white' }} />
 		</ArrowBase>
 	)
 }
