@@ -101,7 +101,15 @@ const TestimonialCarousel = ({
 	}, [])
 
 	useEffect(() => {
-		handleUpdateCarousel()
+		const observer = new ResizeObserver(() => {
+			handleUpdateCarousel()
+		})
+
+		observer.observe(document.body)
+
+		return () => {
+			observer.unobserve(document.body)
+		}
 	}, [handleUpdateCarousel])
 
 	// remake to intersection observer
