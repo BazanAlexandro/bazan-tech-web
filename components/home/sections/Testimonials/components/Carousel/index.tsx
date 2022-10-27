@@ -82,19 +82,32 @@ const TestimonialCarousel = ({
 		))
 	}, [items])
 
-	useEffect(() => {
+	const handleUpdateCarousel = useCallback(() => {
+		if (!scrollableRef.current) return
+
+		const minOffset = calculateLeftOffset(scrollableRef.current) + DISTANCE_THRESHOLD
+
+		setLeftVisible(scrollableRef.current.scrollLeft > minOffset)
+		setRightVisible(scrollableRef.current.scrollLeft < scrollableRef.current.scrollWidth - scrollableRef.current.clientWidth - minOffset)
+
 		updateCarousel()
 	}, [])
+
+	useEffect(() => {
+		if (!scrollableRef.current) return
+
+		// default scroll
+		scrollableRef.current.scrollLeft = calculateLeftOffset(scrollableRef.current)
+	}, [])
+
+	useEffect(() => {
+		handleUpdateCarousel()
+	}, [handleUpdateCarousel])
 
 	// remake to intersection observer
-	const scrollHandler = useCallback((e: any) => {
-		const minOffset = scrollableRef.current ? calculateLeftOffset(scrollableRef.current) + DISTANCE_THRESHOLD : 0
-
-		setLeftVisible(e.target.scrollLeft > minOffset)
-		setRightVisible(e.target.scrollLeft < e.target.scrollWidth - e.target.clientWidth - minOffset)
-
-		updateCarousel()
-	}, [])
+	const scrollHandler = useCallback(() => {
+		handleUpdateCarousel()
+	}, [handleUpdateCarousel])
 
 	const handleClickLeft = useCallback(() => {
 		if (!scrollableRef.current) return
