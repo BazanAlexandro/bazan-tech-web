@@ -1,3 +1,6 @@
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { config, useTrail } from 'react-spring'
 import { ExperienceType } from '../../../../types/Experience'
 import { Title } from '../../../common'
 import Experience from './components/Experience'
@@ -45,12 +48,27 @@ const exps: ExperienceType[] = [{
 }]
 
 const CVSection = () => {
+	const { ref, inView } = useInView({
+		threshold: 0.2
+	})
+
+	const [trail, trailApi] = useTrail(exps.length, () => ({ opacity: 0, y: -50, config: config.molasses }))
+
 	const components = exps.map((exp, ind) => (
-		<Experience item={exp} isLast={ind === exps.length - 1} key={ind} />
+		<Experience item={exp} isLast={ind === exps.length - 1} key={ind} style={trail[ind]} />
 	))
 
+	useEffect(() => {
+		if (inView) {
+			trailApi.start({
+				opacity: 1,
+				y: 0
+			})
+		}
+	}, [inView, trailApi])
+
 	return (
-		<Styles.Root>
+		<Styles.Root ref={ref}>
 			<Title>
 				Experiences
 			</Title>

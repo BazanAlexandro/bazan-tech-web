@@ -1,8 +1,9 @@
+import { animated } from 'react-spring'
 import styled from 'styled-components'
 import { COLORS } from '../../../../../constants/colors'
 import { ExperienceType } from "../../../../../types/Experience"
 
-const Root = styled.div`
+const Root = styled(animated.div)`
 	display: flex;
 	justify-content: space-between;
 	padding: 1em;
@@ -55,15 +56,17 @@ const Bullet = styled.li``
 type Props = {
 	item: ExperienceType
 	isLast?: boolean
+	style: any
 }
 
 const Experience = ({
 	item,
-	isLast
+	isLast,
+	style
 }: Props) => {
 	return (
 		<>
-			<Root>
+			<Root style={style}>
 				<Details>
 					<Title>
 						{item.title} at <CompanyName>{item.company}</CompanyName>
