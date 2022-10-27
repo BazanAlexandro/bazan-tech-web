@@ -1,4 +1,5 @@
 import { ExperienceType } from '../../../../types/Experience'
+import { Title } from '../../../common'
 import Experience from './components/Experience'
 import * as Styles from './styles'
 
@@ -45,11 +46,14 @@ const exps: ExperienceType[] = [{
 
 const CVSection = () => {
 	const components = exps.map((exp, ind) => (
-		<Experience item={exp} key={ind} />
+		<Experience item={exp} isLast={ind === exps.length - 1} key={ind} />
 	))
 
 	return (
 		<Styles.Root>
+			<Title>
+				Experiences
+			</Title>
 			{components}
 		</Styles.Root>
 	)

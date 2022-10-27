@@ -1,4 +1,5 @@
 import { TestimonialType } from '../../../../types/Testimonial'
+import { Title } from '../../../common'
 import TestimonialCarousel from './components/Carousel'
 import * as Styles from './styles'
 
@@ -17,9 +18,9 @@ const items: TestimonialType[] = Array(4).fill({
 const TestimonialsSection = () => {
 	return (
 		<Styles.Root>
-			<Styles.Title>
+			<Title>
 				Testimonials
-			</Styles.Title>
+			</Title>
 
 			<TestimonialCarousel items={items} />
 		</Styles.Root>

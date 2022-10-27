@@ -12,8 +12,3 @@ export const Root = styled.div`
 	padding: 1em 3em;
 	gap: 2em;
 `
-
-export const Title = styled.h2`
-	margin: 0em;
-	font-size: 2rem;
-`
