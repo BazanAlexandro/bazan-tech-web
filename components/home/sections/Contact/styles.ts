@@ -14,10 +14,13 @@ export const Root = styled.div`
 	gap: 2em;
 `
 
-export const Title = styled.h2``
-
 export const ContactsRow = styled.div`
 	display: flex;
 	gap: 1em;
 	align-items: center;
+`
+
+export const UpworkIcon = styled.img`
+	width: 1.5em;
+	height: 1.5em;
 `

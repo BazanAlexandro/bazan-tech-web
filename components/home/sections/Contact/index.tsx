@@ -1,32 +1,37 @@
 import { CONTACTS } from '../../../../constants/contacts'
+import { Title } from '../../../common'
 import * as Styles from './styles'
+import EmailIcon from '@mui/icons-material/Email'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import TelegramIcon from '@mui/icons-material/Telegram'
+import getImg from '../../../../utils/getImg'
 
 const ContactSection = () => {
 	return (
 		<Styles.Root>
-			<Styles.Title>
+			<Title>
 				Contacts
-			</Styles.Title>
+			</Title>
 
 			<Styles.ContactsRow>
 				<a href={`mailto:${CONTACTS.email}`}>
-					email
+					<EmailIcon />
 				</a>
 				/
-				<a>
-					twitter
+				<a href={CONTACTS.twitter}>
+					<TwitterIcon />
 				</a>
 				/
-				<a>
-					telegram
+				<a href={CONTACTS.telegram}>
+					<TelegramIcon />
 				</a>
 				/
-				<a>
-					upwork
+				<a href={CONTACTS.upwork}>
+					<Styles.UpworkIcon alt="upwork-icon" src={getImg('upwork.png')} />
 				</a>
 			</Styles.ContactsRow>
 
-			<a>Book a call</a>
+			<a href={CONTACTS.calendly}>Book a call</a>
 		</Styles.Root>
 	)
 }
