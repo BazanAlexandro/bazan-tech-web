@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/styled": "^11.10.5",
+    "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.10",
     "@mui/styled-engine-sc": "npm:@mui/styled-engine-sc@latest",
@@ -18,8 +20,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.0",
-    "react-spring": "^9.5.5",
-    "styled-components": "^5.3.6"
+    "react-spring": "^9.5.5"
   },
   "devDependencies": {
     "@types/node": "18.8.5",

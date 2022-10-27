@@ -65,10 +65,10 @@ const Experience = ({
 	const durationSpring = useSpring({
 		from: {
 			background: `linear-gradient(0deg, ${COLORS.light}, ${COLORS.lighter})`,
-			'-webkit-background-clip': 'text'
+			WebkitBackgroundClip: 'text'
 		},
 		background: `linear-gradient(360deg, ${COLORS.light}, ${COLORS.lighter})`,
-		'-webkit-background-clip': 'text',
+		WebkitBackgroundClip: 'text',
 		loop: true,
 		config: config.molasses
 	})

@@ -11,6 +11,7 @@ const nextConfig = withTM({
   compiler: {
     styledComponents: true
   },
+  reactStrictMode: false,
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
