@@ -25,7 +25,8 @@ const Welcome = () => {
 	}, [])
 
 	return (
-		<Styles.Root onMouseMove={handleMouseMove} id="#top"
+		<Styles.Root onMouseMove={handleMouseMove}
+			id="top"
 			data-section
 			data-bg={COLORS.primary}
 			data-color={COLORS.lighter}

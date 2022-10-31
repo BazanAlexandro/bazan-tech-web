@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { animated, useTrail } from 'react-spring'
 import { COLORS } from '../../constants/colors'
 import { CONTACTS } from '../../constants/contacts'
-import { ExternalLink } from '../common'
+import { ExternalLink, InternalLink } from '../common'
 import * as Styles from './styles'
 
 const contacts = [{
@@ -85,9 +85,9 @@ const Header = () => {
 			<Styles.NavigationPanel>
 				{linksTrail.map((styles, i) => (
 					<Styles.HeaderItem key={i}>
-						<animated.a style={styles} href={links[i].href}>
+						<InternalLink style={styles} href={links[i].href}>
 							{links[i].name}
-						</animated.a>
+						</InternalLink>
 						{i < links.length - 1 && "/"}
 					</Styles.HeaderItem>
 				))}

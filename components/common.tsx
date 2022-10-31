@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { animated, config, useSpring } from 'react-spring'
 import styled from 'styled-components'
@@ -38,3 +38,21 @@ export const ExternalLink = styled.a.attrs({
 	target: '_blank',
 	rel: 'noreferrer"'
 })``
+
+const Link = styled.a``
+
+export const InternalLink = (props: any) => {
+	const handleClick = useCallback((e: any) => {
+		e.preventDefault()
+
+		const target = document.querySelector(props.href)
+
+		window.scroll({
+			top: target.offsetTop,
+			left: 0,
+			behavior: 'smooth'
+		})
+	}, [props.href])
+
+	return <Link {...props} onClick={handleClick} />
+}
