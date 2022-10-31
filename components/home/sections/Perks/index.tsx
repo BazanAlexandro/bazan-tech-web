@@ -34,7 +34,7 @@ const PerksSection = () => {
 	}, [inView, numberApi, trailApi])
 
 	return (
-		<Styles.Root>
+		<Styles.Root id="perks">
 			{trail[0] && (
 				<Styles.Bullet style={trail[0]}>
 					<Styles.BulletHeader>

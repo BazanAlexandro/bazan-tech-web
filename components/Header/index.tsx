@@ -18,22 +18,25 @@ const contacts = [{
 }]
 
 const links = [{
-	name: 'top'
+	name: 'top',
+	href: '#top'
 }, {
-	name: 'perks'
+	name: 'perks',
+	href: '#perks'
 }, {
-	name: 'portfolio'
+	name: 'testimonials',
+	href: '#testimonials'
 }, {
-	name: 'testimonials'
+	name: 'CV',
+	href: '#CV'
 }, {
-	name: 'CV'
-}, {
-	name: 'contacts'
+	name: 'contacts',
+	href: '#contacts'
 }]
 
 const Header = () => {
 	const contactsTrail = useTrail(4, { from: { opacity: 0 }, opacity: 1 })
-	const linksTrail = useTrail(6, { from: { opacity: 0 }, opacity: 1 })
+	const linksTrail = useTrail(5, { from: { opacity: 0 }, opacity: 1 })
 
 	return (
 		<Styles.Root>
@@ -51,7 +54,7 @@ const Header = () => {
 			<Styles.NavigationPanel>
 				{linksTrail.map((styles, i) => (
 					<Styles.HeaderItem key={i}>
-						<animated.a style={styles}>
+						<animated.a style={styles} href={links[i].href}>
 							{links[i].name}
 						</animated.a>
 						{i < links.length - 1 && "/"}

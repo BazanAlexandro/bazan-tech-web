@@ -68,7 +68,7 @@ const CVSection = () => {
 	}, [inView, trailApi])
 
 	return (
-		<Styles.Root ref={ref}>
+		<Styles.Root ref={ref} id="CV">
 			<Title>
 				Experiences
 			</Title>

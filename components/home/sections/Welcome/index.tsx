@@ -24,7 +24,7 @@ const Welcome = () => {
 	}, [])
 
 	return (
-		<Styles.Root onMouseMove={handleMouseMove}>
+		<Styles.Root onMouseMove={handleMouseMove} id="#top">
 			<Styles.Bg style={bgStyle} />
 			<Styles.Fg src="/assets/Person.png" style={fgStyle} />
 

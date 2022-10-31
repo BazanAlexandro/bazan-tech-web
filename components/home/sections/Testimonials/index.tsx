@@ -17,7 +17,7 @@ const items: TestimonialType[] = Array(4).fill({
 
 const TestimonialsSection = () => {
 	return (
-		<Styles.Root>
+		<Styles.Root id="testimonials">
 			<Title>
 				Testimonials
 			</Title>

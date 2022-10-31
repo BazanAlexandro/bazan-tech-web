@@ -9,7 +9,7 @@ import getImg from '../../../../utils/getImg'
 
 const ContactSection = () => {
 	return (
-		<Styles.Root>
+		<Styles.Root id="contacts">
 			<Title>
 				Contacts
 			</Title>
