@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react'
 import { animated, useTrail } from 'react-spring'
+import { COLORS } from '../../constants/colors'
 import { CONTACTS } from '../../constants/contacts'
 import { ExternalLink } from '../common'
 import * as Styles from './styles'
@@ -38,8 +40,37 @@ const Header = () => {
 	const contactsTrail = useTrail(4, { from: { opacity: 0 }, opacity: 1 })
 	const linksTrail = useTrail(5, { from: { opacity: 0 }, opacity: 1 })
 
+	const [bg, setBg] = useState(COLORS.primary)
+	const [color, setColor] = useState(COLORS.lighter)
+
+	useEffect(() => {
+		const sectionRoots = [...document.querySelectorAll('[data-section]')]
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const newBg = entry.target.getAttribute('data-bg')
+					const newColor = entry.target.getAttribute('data-color')
+	
+					setBg(newBg ?? COLORS.primary)
+					setColor(newColor ?? COLORS.lighter)
+				}
+			})
+		}, {
+			threshold: 0.95
+		})
+
+		sectionRoots.forEach(r => {
+			observer.observe(r)
+		})
+
+		return () => {
+			observer.disconnect()
+		}
+	}, [])
+
 	return (
-		<Styles.Root>
+		<Styles.Root id="header" bg={bg} color={color}>
 			<Styles.ContactsPanel>
 				{contactsTrail.map((styles, i) => (
 					<Styles.HeaderItem key={i} style={styles}>

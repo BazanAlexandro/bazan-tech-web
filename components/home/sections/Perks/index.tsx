@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useSpring, config, useTrail } from 'react-spring'
+import { COLORS } from '../../../../constants/colors'
 import * as Styles from './styles'
 
 /**
@@ -34,7 +35,11 @@ const PerksSection = () => {
 	}, [inView, numberApi, trailApi])
 
 	return (
-		<Styles.Root id="perks">
+		<Styles.Root id="perks"
+			data-section
+			data-bg={COLORS.primary}
+			data-color={COLORS.lighter}
+		>
 			{trail[0] && (
 				<Styles.Bullet style={trail[0]}>
 					<Styles.BulletHeader>

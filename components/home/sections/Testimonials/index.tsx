@@ -1,3 +1,4 @@
+import { COLORS } from '../../../../constants/colors'
 import { TestimonialType } from '../../../../types/Testimonial'
 import { Title } from '../../../common'
 import TestimonialCarousel from './components/Carousel'
@@ -17,7 +18,12 @@ const items: TestimonialType[] = Array(4).fill({
 
 const TestimonialsSection = () => {
 	return (
-		<Styles.Root id="testimonials">
+		<Styles.Root
+			id="testimonials"
+			data-section
+			data-bg={COLORS.lighter}
+			data-color={COLORS.primary}
+		>
 			<Title>
 				Testimonials
 			</Title>

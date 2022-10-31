@@ -6,10 +6,16 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import TelegramIcon from '@mui/icons-material/Telegram'
 import CallIcon from '@mui/icons-material/Call'
 import getImg from '../../../../utils/getImg'
+import { COLORS } from '../../../../constants/colors'
 
 const ContactSection = () => {
 	return (
-		<Styles.Root id="contacts">
+		<Styles.Root
+			id="contacts"
+			data-section
+			data-bg={COLORS.light}
+			data-color={COLORS.lighter}
+		>
 			<Title>
 				Contacts
 			</Title>

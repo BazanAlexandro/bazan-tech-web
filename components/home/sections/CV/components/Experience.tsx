@@ -75,7 +75,11 @@ const Experience = ({
 
 	return (
 		<>
-			<Root style={style}>
+			<Root style={style}
+				data-section
+				data-bg={COLORS.lighter}
+				data-color={COLORS.light}
+			>
 				<Details>
 					<Title>
 						{item.title} at <CompanyName>{item.company}</CompanyName>

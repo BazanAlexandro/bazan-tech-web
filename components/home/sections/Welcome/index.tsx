@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from 'react'
+import { COLORS } from '../../../../constants/colors'
 import * as Styles from './styles'
 
 function getOffset(delta: number): number {
@@ -24,7 +25,11 @@ const Welcome = () => {
 	}, [])
 
 	return (
-		<Styles.Root onMouseMove={handleMouseMove} id="#top">
+		<Styles.Root onMouseMove={handleMouseMove} id="#top"
+			data-section
+			data-bg={COLORS.primary}
+			data-color={COLORS.lighter}
+		>
 			<Styles.Bg style={bgStyle} />
 			<Styles.Fg src="/assets/Person.png" style={fgStyle} />
 

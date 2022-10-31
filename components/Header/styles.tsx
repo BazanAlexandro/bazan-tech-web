@@ -1,11 +1,11 @@
 import { animated } from 'react-spring'
 import styled from 'styled-components'
-import { COLORS } from '../../constants/colors'
 
-export const Root = styled.div`
+export const Root = styled.div<{ bg: string, color: string }>`
 	position: relative;
 	z-index: 10;
-	background: ${COLORS.primary};
+	background: ${props => props.bg};
+	color: ${props => props.color};
 	box-shadow: 0 0 10px rgb(0 0 0 / 65%);
 	position: fixed;
 	left: 0;
@@ -14,6 +14,7 @@ export const Root = styled.div`
 	height: 4rem;
 	display: flex;
 	justify-content: space-between;
+	transition: background 300ms cubic-bezier(0.25, 1, 0.5, 1);
 `
 
 export const ContactsPanel = styled.div`
