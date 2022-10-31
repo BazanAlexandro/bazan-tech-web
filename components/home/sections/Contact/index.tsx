@@ -1,5 +1,5 @@
 import { CONTACTS } from '../../../../constants/contacts'
-import { Title } from '../../../common'
+import { ExternalLink, Title } from '../../../common'
 import * as Styles from './styles'
 import EmailIcon from '@mui/icons-material/Email'
 import TwitterIcon from '@mui/icons-material/Twitter'
@@ -14,24 +14,24 @@ const ContactSection = () => {
 			</Title>
 
 			<Styles.ContactsRow>
-				<a href={`mailto:${CONTACTS.email}`}>
+				<ExternalLink href={`mailto:${CONTACTS.email}`}>
 					<EmailIcon />
-				</a>
+				</ExternalLink>
 				/
-				<a href={CONTACTS.twitter}>
+				<ExternalLink href={CONTACTS.twitter}>
 					<TwitterIcon />
-				</a>
+				</ExternalLink>
 				/
-				<a href={CONTACTS.telegram}>
+				<ExternalLink href={CONTACTS.telegram}>
 					<TelegramIcon />
-				</a>
+				</ExternalLink>
 				/
-				<a href={CONTACTS.upwork}>
+				<ExternalLink href={CONTACTS.upwork}>
 					<Styles.UpworkIcon alt="upwork-icon" src={getImg('upwork.png')} />
-				</a>
+				</ExternalLink>
 			</Styles.ContactsRow>
 
-			<a href={CONTACTS.calendly}>Book a call</a>
+			<ExternalLink href={CONTACTS.calendly}>Book a call</ExternalLink>
 		</Styles.Root>
 	)
 }

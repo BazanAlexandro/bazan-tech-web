@@ -33,3 +33,8 @@ export const Title = (props: any) => {
 
 	return <TitleStyled ref={ref} {...props} style={style} />
 }
+
+export const ExternalLink = styled.a.attrs({
+	target: '_blank',
+	rel: 'noreferrer"'
+})``

@@ -1,16 +1,20 @@
 import { animated, useTrail } from 'react-spring'
 import { CONTACTS } from '../../constants/contacts'
+import { ExternalLink } from '../common'
 import * as Styles from './styles'
 
 const contacts = [{
 	name: 'email',
 	href: `mailto:${CONTACTS.email}`
 }, {
-	name: 'twitter'
+	name: 'twitter',
+	href: CONTACTS.twitter
 }, {
-	name: 'telegram'
+	name: 'telegram',
+	href: CONTACTS.telegram
 }, {
-	name: 'upwork'
+	name: 'upwork',
+	href: CONTACTS.upwork
 }]
 
 const links = [{
@@ -36,9 +40,9 @@ const Header = () => {
 			<Styles.ContactsPanel>
 				{contactsTrail.map((styles, i) => (
 					<Styles.HeaderItem key={i} style={styles}>
-						<a>
+						<ExternalLink href={contacts[i].href}>
 							{contacts[i].name}
-						</a>
+						</ExternalLink>
 						{i < contacts.length - 1 && "/"}
 					</Styles.HeaderItem>
 				))}
