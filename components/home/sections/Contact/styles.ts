@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { COLORS } from '../../../../constants/colors'
+import { ExternalLink } from '../../../common'
 
 export const Root = styled.div`
 	width: 100%;
@@ -18,9 +19,25 @@ export const ContactsRow = styled.div`
 	display: flex;
 	gap: 1em;
 	align-items: center;
+
+	svg, img {
+		width: 2em;
+		height: 2em;
+	}
 `
 
-export const UpworkIcon = styled.img`
-	width: 1.5em;
-	height: 1.5em;
+export const UpworkIcon = styled.img``
+
+export const CallLink = styled(ExternalLink)`
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+
+	span {
+		border-bottom: thin dashed #333;
+	}
+
+	svg {
+		width: 1.5em;
+	}
 `

@@ -4,6 +4,7 @@ import * as Styles from './styles'
 import EmailIcon from '@mui/icons-material/Email'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import TelegramIcon from '@mui/icons-material/Telegram'
+import CallIcon from '@mui/icons-material/Call'
 import getImg from '../../../../utils/getImg'
 
 const ContactSection = () => {
@@ -31,7 +32,9 @@ const ContactSection = () => {
 				</ExternalLink>
 			</Styles.ContactsRow>
 
-			<ExternalLink href={CONTACTS.calendly}>Book a call</ExternalLink>
+			<Styles.CallLink href={CONTACTS.calendly}>
+				<span>Book a call </span><CallIcon />
+			</Styles.CallLink>
 		</Styles.Root>
 	)
 }
