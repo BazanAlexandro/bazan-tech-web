@@ -37,7 +37,7 @@ const PerksSection = () => {
 	return (
 		<Styles.Root id="perks"
 			data-section
-			data-bg={COLORS.primary}
+			data-bg={COLORS.light}
 			data-color={COLORS.lighter}
 		>
 			{trail[0] && (

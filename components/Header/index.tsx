@@ -1,5 +1,6 @@
+import { lighten } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { animated, useTrail } from 'react-spring'
+import { useSpring, useTrail } from 'react-spring'
 import { COLORS } from '../../constants/colors'
 import { CONTACTS } from '../../constants/contacts'
 import { ExternalLink, InternalLink } from '../common'
@@ -43,17 +44,29 @@ const Header = () => {
 	const [bg, setBg] = useState(COLORS.primary)
 	const [color, setColor] = useState(COLORS.lighter)
 
+	const [gradientStyle, api] = useSpring({}, [])
+
 	useEffect(() => {
 		const sectionRoots = [...document.querySelectorAll('[data-section]')]
 
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
-					const newBg = entry.target.getAttribute('data-bg')
+					const newBg = entry.target.getAttribute('data-bg')!
 					const newColor = entry.target.getAttribute('data-color')
 	
-					setBg(newBg ?? COLORS.primary)
 					setColor(newColor ?? COLORS.lighter)
+
+					api.start({
+						from: {
+							background: Styles.getBg(bg)
+						},
+						background: Styles.getBg(newBg),
+						reset: true,
+						onResolve: () => {
+							setBg(newBg ?? COLORS.primary)
+						}
+					})
 				}
 			})
 		}, {
@@ -62,15 +75,16 @@ const Header = () => {
 
 		sectionRoots.forEach(r => {
 			observer.observe(r)
+			api.stop(true)
 		})
 
 		return () => {
 			observer.disconnect()
 		}
-	}, [])
+	}, [api, bg])
 
 	return (
-		<Styles.Root id="header" bg={bg} color={color}>
+		<Styles.Root id="header" bg={bg} color={color} style={gradientStyle}>
 			<Styles.ContactsPanel>
 				{contactsTrail.map((styles, i) => (
 					<Styles.HeaderItem key={i} style={styles}>

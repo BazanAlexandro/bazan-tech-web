@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { config, useTrail } from 'react-spring'
+import { COLORS } from '../../../../constants/colors'
 import { ExperienceType } from '../../../../types/Experience'
 import { Title } from '../../../common'
 import Experience from './components/Experience'
@@ -68,7 +69,11 @@ const CVSection = () => {
 	}, [inView, trailApi])
 
 	return (
-		<Styles.Root ref={ref} id="CV">
+		<Styles.Root ref={ref}
+			id="CV"
+			data-section
+			data-bg={COLORS.lighter}
+			data-color={COLORS.light}>
 			<Title>
 				Experiences
 			</Title>

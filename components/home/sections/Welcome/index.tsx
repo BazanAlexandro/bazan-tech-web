@@ -38,9 +38,6 @@ const Welcome = () => {
 				<Styles.Title>
 					Alexander Bazan
 				</Styles.Title>
-				<Styles.Subtitle>
-					Skilled frontend developer with attention to customer needs
-				</Styles.Subtitle>
 			</Styles.TextContainer>
 		</Styles.Root>
 	)
