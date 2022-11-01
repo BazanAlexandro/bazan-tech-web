@@ -37,7 +37,12 @@ export const Bg = styled.img`
 export const Fg = styled.img`
 	position: absolute;
 	left: 50%;
-	top: 10%;
+	width: 35vw;
+	max-height: 100vh;
+	min-width: 60vh;
+	object-fit: contain;
+	transform-origin: bottom;
+	bottom: -5em;
 	z-index: 0;
 	filter: drop-shadow(2px 4px 6px black);
 `
