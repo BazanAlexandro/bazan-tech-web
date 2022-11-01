@@ -2,6 +2,7 @@ import { animated } from 'react-spring'
 import styled from 'styled-components'
 import { lighten } from '@mui/material'
 import { easeOutQuart } from '../../constants/easings';
+import { mdViewport } from '../../constants/breakpoints';
 
 export const getBg = (bg: string) => {
 	return `linear-gradient(45deg, ${bg} 50%, ${lighten(bg, 0.3)} 100%)`;
@@ -21,6 +22,12 @@ export const Root = styled(animated.div)<{ bg: string, color: string }>`
 	display: flex;
 	justify-content: space-between;
 	transition: background 300ms ${easeOutQuart};
+	gap: 2em;
+
+	${mdViewport} {
+		padding: none;
+		justify-content: center;
+	}
 `
 
 export const ContactsPanel = styled.div`
@@ -29,6 +36,10 @@ export const ContactsPanel = styled.div`
 	height: 100%;
 	padding-left: 3em;
 	align-items: center;
+
+	${mdViewport} {
+		padding: 0;
+	}
 `
 
 export const NavigationPanel = styled.div`
@@ -37,6 +48,10 @@ export const NavigationPanel = styled.div`
 	height: 100%;
 	padding-right: 3em;
 	align-items: center;
+
+	${mdViewport} {
+		display: none;
+	}
 `
 
 export const HeaderItem = styled(animated.div)`

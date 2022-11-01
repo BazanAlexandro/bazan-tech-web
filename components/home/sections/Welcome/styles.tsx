@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { mdViewport } from '../../../../constants/breakpoints'
 import { COLORS } from '../../../../constants/colors'
 
 export const Root = styled.div`
@@ -32,6 +33,10 @@ export const Bg = styled.img`
 	min-width: 100vw;
 	min-height: 100vh;
 	filter: brightness(0.85);
+
+	${mdViewport} {
+		transform: none !important;
+	}
 `
 
 export const Fg = styled.img`
@@ -45,6 +50,11 @@ export const Fg = styled.img`
 	bottom: -5em;
 	z-index: 0;
 	filter: drop-shadow(2px 4px 6px black);
+
+	${mdViewport} {
+		transform: none !important;
+		left: 0;
+	}
 `
 
 export const TextContainer = styled.div`
@@ -52,4 +62,10 @@ export const TextContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	${mdViewport} {
+		transform: none !important;
+		text-align: center;
+		padding: 0 1em;
+	}
 `

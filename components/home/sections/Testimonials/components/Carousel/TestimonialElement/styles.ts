@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { mdViewport } from '../../../../../../../constants/breakpoints'
 import { COLORS } from '../../../../../../../constants/colors'
 
 export const Root = styled.div`
@@ -17,6 +18,11 @@ export const Root = styled.div`
 	position: relative;
 	border: thin solid #ccc;
 	border-radius: 1em;
+
+	${mdViewport} {
+		min-width: calc(100vw - 1em);
+		transform: none !important;
+	}
 `
 
 export const HeroTitle = styled.div`

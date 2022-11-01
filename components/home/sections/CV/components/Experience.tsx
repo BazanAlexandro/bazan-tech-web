@@ -1,6 +1,6 @@
 import { animated, config, useSpring } from 'react-spring'
 import styled from 'styled-components'
-import { COLORS } from '../../../../../constants/colors'
+import { mdViewport } from '../../../../../constants/breakpoints'
 import { ExperienceType } from "../../../../../types/Experience"
 import { GradientText } from '../../../../common'
 
@@ -11,6 +11,10 @@ const Root = styled(animated.div)`
 	align-items: center;
 	color: inherit;
 	gap: 2em;
+
+	${mdViewport} {
+		flex-direction: column-reverse;
+	}
 `
 
 const Details = styled.div`

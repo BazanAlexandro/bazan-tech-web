@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import LeftIcon from '@mui/icons-material/ArrowCircleLeft'
 import RightIcon from '@mui/icons-material/ArrowCircleRight'
 import { COLORS } from '../../../../../../constants/colors'
+import { mdViewport } from '../../../../../../constants/breakpoints'
 
 type Direciton = 'left' | 'right'
 
@@ -38,6 +39,10 @@ const ArrowBase = styled.button<{ visible?: boolean, direction: Direciton }>`
 			opacity: 1;
 			transform: translateX(0px);
 		}
+	}
+
+	${mdViewport} {
+		display: none;
 	}
 `
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { mdViewport } from '../../../../constants/breakpoints'
 import { COLORS } from '../../../../constants/colors'
 
 export const Root = styled.div`
@@ -12,4 +13,9 @@ export const Root = styled.div`
 	padding: 1em 3em;
 	gap: 2em;
 	position: relative;
+
+	${mdViewport} {
+		padding-left: 0;
+		padding-right: 0;
+	}
 `
