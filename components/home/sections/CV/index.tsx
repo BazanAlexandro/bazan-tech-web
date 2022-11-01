@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { config, useTrail } from 'react-spring'
 import { COLORS } from '../../../../constants/colors'
 import { ExperienceType } from '../../../../types/Experience'
+import { Dots, Squares } from '../../../../utils/backgroundPatterns'
 import { Title } from '../../../common'
 import Experience from './components/Experience'
 import * as Styles from './styles'
@@ -74,6 +75,8 @@ const CVSection = () => {
 			data-section
 			data-bg={COLORS.lighter}
 			data-color={COLORS.light}>
+			<Dots />
+
 			<Title>
 				Experiences
 			</Title>

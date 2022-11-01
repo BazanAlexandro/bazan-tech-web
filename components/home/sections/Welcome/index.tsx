@@ -1,6 +1,5 @@
 import { useCallback, useMemo, useState } from 'react'
 import { COLORS } from '../../../../constants/colors'
-import { DotBackground } from '../Perks/styles'
 import * as Styles from './styles'
 
 function getOffset(delta: number): number {

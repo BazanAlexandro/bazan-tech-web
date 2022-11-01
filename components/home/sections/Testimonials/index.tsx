@@ -24,7 +24,7 @@ const TestimonialsSection = () => {
 			data-bg={COLORS.lighter}
 			data-color={COLORS.primary}
 		>
-			<Title colorFrom={COLORS.secondary}>
+			<Title $colorFrom={COLORS.secondary}>
 				Testimonials
 			</Title>
 

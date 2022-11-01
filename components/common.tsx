@@ -63,9 +63,9 @@ export const InternalLink = (props: any) => {
 	return <Link {...props} onClick={handleClick} />
 }
 
-export const GradientTextBase = styled(animated.div)<{ colorFrom?: string, colorTo?: string }>`
+export const GradientTextBase = styled(animated.div)<{ $colorFrom?: string, colorTo?: string }>`
 	font-size: 2rem;
-	background: linear-gradient(0deg, ${props => props.colorFrom ?? COLORS.light}, ${props => props.colorTo ?? COLORS.lighter});
+	background: linear-gradient(0deg, ${props => props.$colorFrom ?? COLORS.light}, ${props => props.colorTo ?? COLORS.lighter});
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding: 0.1em;
@@ -73,11 +73,11 @@ export const GradientTextBase = styled(animated.div)<{ colorFrom?: string, color
 
 export const GradientText = ({
 	withAnimation,
-	colorFrom,
+	$colorFrom,
 	colorTo,
 	...props
 }: any) => {
-	const colorStart = colorFrom ?? COLORS.light
+	const colorStart = $colorFrom ?? COLORS.light
 	const colorEnd = colorTo ?? COLORS.lighter
 
 	const durationSpring = useSpring({

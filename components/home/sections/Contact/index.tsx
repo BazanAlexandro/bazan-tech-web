@@ -15,7 +15,7 @@ const ContactSection = () => {
 			data-bg={COLORS.light}
 			data-color={COLORS.lighter}
 		>
-			<Title colorFrom={COLORS.light}>
+			<Title $colorFrom={COLORS.light}>
 				Contacts
 			</Title>
 
