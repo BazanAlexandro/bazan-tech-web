@@ -1,6 +1,7 @@
 import { animated } from 'react-spring'
 import styled from 'styled-components'
 import { lighten } from '@mui/material'
+import { easeOutQuart } from '../../constants/easings';
 
 export const getBg = (bg: string) => {
 	return `linear-gradient(45deg, ${bg} 50%, ${lighten(bg, 0.3)} 100%)`;
@@ -19,11 +20,7 @@ export const Root = styled(animated.div)<{ bg: string, color: string }>`
 	height: 4rem;
 	display: flex;
 	justify-content: space-between;
-	transition: background 300ms cubic-bezier(0.25, 1, 0.5, 1);
-
-	a:hover {
-		text-decoration: underline;
-	}
+	transition: background 300ms ${easeOutQuart};
 `
 
 export const ContactsPanel = styled.div`

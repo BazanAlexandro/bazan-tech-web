@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { animated, config, useSpring } from 'react-spring'
 import styled from 'styled-components'
+import { easeOutQuart } from '../constants/easings'
 
 export const TitleStyled = styled(animated.h2)`
 	text-align: center;
@@ -34,12 +35,44 @@ export const Title = (props: any) => {
 	return <TitleStyled ref={ref} {...props} style={style} />
 }
 
-export const ExternalLink = styled.a.attrs({
+const Link = styled(animated.a)<{ withHoverEffect?: boolean }>`
+	position: relative;
+
+	::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 0;
+		border-bottom: thin solid currentColor;
+		bottom: -3px;
+		display: none;
+		left: 0;
+		transform: translateY(0px);
+		animation: 300ms fadeIn ${easeOutQuart};
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(5px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+
+	${props => props.withHoverEffect && `
+		&:hover::after {
+			display: block;
+		}
+	`}
+`
+
+export const ExternalLink = styled(Link).attrs({
 	target: '_blank',
 	rel: 'noreferrer"'
 })``
-
-const Link = styled.a``
 
 export const InternalLink = (props: any) => {
 	const handleClick = useCallback((e: any) => {
