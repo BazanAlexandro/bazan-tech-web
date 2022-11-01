@@ -11,4 +11,5 @@ export const Root = styled.div`
 	flex-direction: column;
 	padding: 10em 3em;
 	gap: 2em;
+	position: relative;
 `

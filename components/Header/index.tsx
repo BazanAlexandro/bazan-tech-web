@@ -88,7 +88,7 @@ const Header = () => {
 			<Styles.ContactsPanel>
 				{contactsTrail.map((styles, i) => (
 					<Styles.HeaderItem key={i} style={styles}>
-						<ExternalLink href={contacts[i].href} withHoverEffect>
+						<ExternalLink href={contacts[i].href} $withHoverEffect>
 							{contacts[i].name}
 						</ExternalLink>
 						{i < contacts.length - 1 && "/"}
@@ -99,7 +99,7 @@ const Header = () => {
 			<Styles.NavigationPanel>
 				{linksTrail.map((styles, i) => (
 					<Styles.HeaderItem key={i}>
-						<InternalLink style={styles} href={links[i].href} withHoverEffect>
+						<InternalLink style={styles} href={links[i].href} $withHoverEffect>
 							{links[i].name}
 						</InternalLink>
 						{i < links.length - 1 && "/"}

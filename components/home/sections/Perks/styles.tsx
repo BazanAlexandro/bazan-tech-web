@@ -17,17 +17,6 @@ export const Root = styled.div`
 	justify-content: center;
 `
 
-export const DotBackground = styled.div`
-	background-image: radial-gradient(currentColor .5px, transparent .5px);
-	background-size: calc(10 * 2.5px) calc(10 * 2.5px);
-	color: white;
-	position: absolute;
-	left: 0%;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.5;
-`
 
 export const Bullet = styled(animated.div)`
 	display: flex;

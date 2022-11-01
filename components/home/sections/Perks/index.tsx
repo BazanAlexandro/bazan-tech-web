@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useSpring, config, useTrail } from 'react-spring'
 import { COLORS } from '../../../../constants/colors'
+import { Dots } from '../../../../utils/backgroundPatterns'
 import getImg from '../../../../utils/getImg'
 import * as Styles from './styles'
 
@@ -41,7 +42,7 @@ const PerksSection = () => {
 			data-bg={COLORS.light}
 			data-color={COLORS.lighter}
 		>
-			<Styles.DotBackground />
+			<Dots />
 
 			<Styles.Bullet>
 				<Styles.HeaderCoutner ref={ref}>

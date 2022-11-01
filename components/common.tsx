@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { COLORS } from '../constants/colors'
 import { easeOutQuart } from '../constants/easings'
 
-const Link = styled(animated.a)<{ withHoverEffect?: boolean }>`
+const Link = styled(animated.a)<{ $withHoverEffect?: boolean }>`
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -35,7 +35,7 @@ const Link = styled(animated.a)<{ withHoverEffect?: boolean }>`
 		}
 	}
 
-	${props => props.withHoverEffect && `
+	${props => props.$withHoverEffect && `
 		&:hover::after {
 			display: block;
 		}
