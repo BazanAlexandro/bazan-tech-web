@@ -1,6 +1,7 @@
 import { animated } from 'react-spring'
 import styled from 'styled-components'
 import { COLORS } from '../../../../constants/colors'
+import { GradientTextBase } from '../../../common'
 
 export const Root = styled.div`
 	width: 100%;
@@ -25,7 +26,7 @@ export const BulletHeader = styled.h2`
 	margin: 0;
 `
 
-export const HeaderCoutner = styled(animated.h2)`
+export const HeaderCoutner = styled(GradientTextBase)`
 	width: 200px;
 	margin: 0;
 	font-size: 11rem;

@@ -16,7 +16,7 @@ const ContactSection = () => {
 			data-bg={COLORS.light}
 			data-color={COLORS.lighter}
 		>
-			<Title>
+			<Title colorFrom={COLORS.light}>
 				Contacts
 			</Title>
 
@@ -38,8 +38,8 @@ const ContactSection = () => {
 				</ExternalLink>
 			</Styles.ContactsRow>
 
-			<Styles.CallLink href={CONTACTS.calendly}>
-				<span>Book a call </span><CallIcon />
+			<Styles.CallLink href={CONTACTS.calendly} withHoverEffect>
+				<span>Book a call </span>
 			</Styles.CallLink>
 		</Styles.Root>
 	)

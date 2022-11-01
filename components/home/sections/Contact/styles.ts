@@ -32,12 +32,5 @@ export const CallLink = styled(ExternalLink)`
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
-
-	span {
-		border-bottom: thin dashed #333;
-	}
-
-	svg {
-		width: 1.5em;
-	}
+	font-size: 1.2rem;
 `
