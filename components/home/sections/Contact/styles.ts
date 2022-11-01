@@ -19,12 +19,12 @@ export const Root = styled.div`
 
 export const ContactsRow = styled.div`
 	display: flex;
-	gap: 1em;
+	gap: 2em;
 	align-items: center;
 
 	svg, img {
-		width: 2em;
-		height: 2em;
+		width: 1.5em;
+		height: 1.5em;
 	}
 `
 

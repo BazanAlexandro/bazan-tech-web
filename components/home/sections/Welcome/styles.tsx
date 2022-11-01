@@ -37,7 +37,7 @@ export const Bg = styled.img`
 export const Fg = styled.img`
 	position: absolute;
 	left: 50%;
-	top: 20%;
+	top: 10%;
 	z-index: 0;
 	filter: drop-shadow(2px 4px 6px black);
 `

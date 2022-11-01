@@ -16,7 +16,7 @@ const Welcome = () => {
 	}), [left, top])
 
 	const fgStyle = useMemo(() => ({
-		transform: `translate(${left}px,${top}px)`
+		transform: `translate(${left}px,${top}px) scale(0.8)`
 	}), [left, top])
 
 	const handleMouseMove = useCallback((e: any) => {
