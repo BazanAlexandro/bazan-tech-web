@@ -1,3 +1,4 @@
+import { lighten } from '@mui/material'
 import { animated } from 'react-spring'
 import styled from 'styled-components'
 import { COLORS } from '../../../../constants/colors'
@@ -7,7 +8,7 @@ export const Root = styled.div`
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
-	background: ${COLORS.primary};
+	background: linear-gradient(-45deg, ${COLORS.primary}, ${lighten(COLORS.primary, 0.2)});
 	display: flex;
 	align-items: center;
 	padding: 1em 3em;

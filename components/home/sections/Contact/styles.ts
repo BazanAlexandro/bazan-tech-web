@@ -1,3 +1,4 @@
+import { darken } from '@mui/material'
 import styled from 'styled-components'
 import { COLORS } from '../../../../constants/colors'
 import { ExternalLink } from '../../../common'
@@ -5,7 +6,7 @@ import { ExternalLink } from '../../../common'
 export const Root = styled.div`
 	width: 100%;
 	min-height: 100vh;
-	background: ${COLORS.lighter};
+	background: linear-gradient(-45deg, ${COLORS.lighter}, ${darken(COLORS.lighter, 0.05)});
 	color: ${COLORS.primary};
 	display: flex;
 	flex-direction: column;
