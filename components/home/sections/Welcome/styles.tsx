@@ -36,6 +36,7 @@ export const Bg = styled.img`
 
 	${mdViewport} {
 		transform: none !important;
+		background-attachment: scroll;
 	}
 `
 
