@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Alexander Bazan</title>
       </Head>
 
       <main className={styles.main}>
