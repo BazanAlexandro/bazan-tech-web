@@ -13,4 +13,14 @@ export const ScrollableWrapper = styled.div`
 	perspective: 1000px;
 	padding: 0 calc(100vw / 3);
 	padding-top: 1em;
+
+	overflow-x: auto;
+    scrollbar-width: none;
+    scrollbar-height: none;
+    -ms-overflow-style: none;
+
+	&::webkit-scrollbar {
+		width: 0 !mportant;
+		height: 0 !important;
+	}
 `
