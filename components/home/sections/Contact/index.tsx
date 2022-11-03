@@ -21,19 +21,27 @@ const ContactSection = () => {
 
 			<Styles.ContactsRow>
 				<ExternalLink href={`mailto:${CONTACTS.email}`}>
-					<EmailIcon />
+					<Styles.InteractiveIconContainer accentColor='#027fc1'>
+						<EmailIcon />
+					</Styles.InteractiveIconContainer>
 				</ExternalLink>
 				/
 				<ExternalLink href={CONTACTS.twitter}>
-					<TwitterIcon />
+					<Styles.InteractiveIconContainer accentColor='#4da2e5'>
+						<TwitterIcon />
+					</Styles.InteractiveIconContainer>
 				</ExternalLink>
 				/
 				<ExternalLink href={CONTACTS.telegram}>
-					<TelegramIcon />
+					<Styles.InteractiveIconContainer accentColor='#0493da'>
+						<TelegramIcon />
+					</Styles.InteractiveIconContainer>
 				</ExternalLink>
 				/
 				<ExternalLink href={CONTACTS.upwork}>
-					<Styles.UpworkIcon alt="upwork-icon" src={getImg('upwork.png')} />
+					<Styles.InteractiveIconContainer accentColor='#15a800'>
+						<Styles.UpworkIcon />
+					</Styles.InteractiveIconContainer>
 				</ExternalLink>
 			</Styles.ContactsRow>
 
