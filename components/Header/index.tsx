@@ -27,9 +27,9 @@ const links = [{
 	name: 'perks',
 	href: '#perks'
 }, {
-	name: 'testimonials',
-	href: '#testimonials'
-}, {
+// 	name: 'testimonials',
+// 	href: '#testimonials'
+// }, {
 	name: 'CV',
 	href: '#CV'
 }, {
@@ -39,7 +39,7 @@ const links = [{
 
 const Header = () => {
 	const contactsTrail = useTrail(4, { from: { opacity: 0 }, opacity: 1 })
-	const linksTrail = useTrail(5, { from: { opacity: 0 }, opacity: 1 })
+	const linksTrail = useTrail(4, { from: { opacity: 0 }, opacity: 1 })
 
 	const [bg, setBg] = useState(COLORS.primary)
 	const [color, setColor] = useState(COLORS.lighter)
