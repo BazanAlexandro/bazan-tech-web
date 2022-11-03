@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 import ContentLoading from '../components/ContentLoading'
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       {loaded ? <Component {...pageProps} /> : <ContentLoading />}
+      <Analytics />
     </>
   )
 }
