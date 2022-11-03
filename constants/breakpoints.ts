@@ -1,3 +1,3 @@
-const md = 600
+const md = 750
 
 export const mdViewport = `@media (max-width: ${md}px)`
