@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import ContactSection from '../components/home/sections/Contact'
 import CVSection from '../components/home/sections/CV'
 import Perks from '../components/home/sections/Perks'
-// import TestimonialsSection from '../components/home/sections/Testimonials'
+import TestimonialsSection from '../components/home/sections/Testimonials'
 import Welcome from '../components/home/sections/Welcome'
 import styles from '../styles/Home.module.css'
 
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <Header />
         <Welcome />
         <Perks />
-        {/* <TestimonialsSection /> */}
+        <TestimonialsSection />
         <CVSection />
         <ContactSection />
       </main>

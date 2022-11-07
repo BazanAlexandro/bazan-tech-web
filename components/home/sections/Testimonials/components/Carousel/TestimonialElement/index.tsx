@@ -14,7 +14,7 @@ const TestimonialElement = ({
 			<Styles.HeroTitle>
 				<Styles.AuthorImgContainer>
 					<Styles.AuthorImg src={getImg(item.authorImage)} />
-					<Styles.CompanyImg src={getImg(item.companyImage)} />
+					{item.companyImage && <Styles.CompanyImg src={getImg(item.companyImage)} />}
 				</Styles.AuthorImgContainer>
 
 				<Styles.Author>

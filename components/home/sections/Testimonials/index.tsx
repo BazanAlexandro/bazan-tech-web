@@ -4,17 +4,21 @@ import { Title } from '../../../common'
 import TestimonialCarousel from './components/Carousel'
 import * as Styles from './styles'
 
-const items: TestimonialType[] = Array(4).fill({
-	author: 'Kianu Reeves',
-	authorImage: '/reviewer.jpeg',
-	authorPosition: 'CEO',
-	company: 'Microsoft',
-	companyLink: 'https://www.microsoft.com',
-	companyImage: '/company-icon.png',
-	text: `Excellent work. Really nice to work with, easy to get along, nice work ethic. Will definitely recomment!
-	Excellent work. Really nice to work with, easy to get along, nice work ethic. Will definitely recomment!
-	Excellent work. Really nice to work with, easy to get along, nice work ethic. Will definitely recomment!`
-})
+const items: TestimonialType[] = [{
+	author: 'Casey Benko',
+	authorImage: '/authors/casey-benko.jpg',
+	authorPosition: 'President',
+	company: 'BLT Global Ventures LLC',
+	companyImage: '/companies/blt.png',
+	text: `Alex is a pleasure to work with. Not only does he have the technical skills to get the job done, he communicates very well. He can work off of high-level objectives or understand, and provide feedback for, complex logic.`
+}, {
+	author: 'Aleksey Tarapygin',
+	authorImage: '/authors/aleksey-tarapygin.jpeg',
+	authorPosition: 'Senior Frontend Developer',
+	company: 'Luxoft',
+	companyImage: '/companies/luxoft.png',
+	text: `I was lucky to work with Alexander for a year and a half together on the same project. During this time he showed himself as a professional and as a reliable colleague, to whom one could always turn for advice and, if necessary, for help. Working with him was comfortable and cool. I hope he learned as much from me as I did from him.`
+}]
 
 const TestimonialsSection = () => {
 	return (
