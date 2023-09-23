@@ -9,6 +9,19 @@ import Experience from './components/Experience'
 import * as Styles from './styles'
 
 const exps: ExperienceType[] = [{
+	title: 'Freelance Software Engineer',
+	company: 'Upwork',
+	companyImage: '',
+	companyLink: 'https://www.upwork.com/freelancers/~0122d4519573b0d4dd',
+	duration: ['2022', 'now'],
+	bullets: [
+		'Earned a good reputation on Upwork.com with Top Rated Plus badge.',
+		'80k+ usd earned',
+		`Worked with a variety of different customers on small or mid-sized projects.
+		Job often includes extensive communication with management, clarification of the
+		requirements. Often served as a lead developer`
+	]
+}, {
 	title: 'Senior Frontend Developer',
 	company: 'Luxoft',
 	companyImage: 'sadf',

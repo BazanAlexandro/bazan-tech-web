@@ -12,6 +12,13 @@ const items: TestimonialType[] = [{
 	companyImage: '/companies/blt.png',
 	text: `Alex is a pleasure to work with. Not only does he have the technical skills to get the job done, he communicates very well. He can work off of high-level objectives or understand, and provide feedback for, complex logic.`
 }, {
+	author: 'Manuel Weiss',
+	authorImage: '/authors/manu.jpeg',
+	authorPosition: 'Manager',
+	company: 'Software Brauerei',
+	companyImage: '/companies/sb.png',
+	text: `Alex is very pleasant to work with - he is very reliable, the work had a satisfactory quality and the task was solved within the expected time`
+}, {
 	author: 'Aleksey Tarapygin',
 	authorImage: '/authors/aleksey-tarapygin.jpeg',
 	authorPosition: 'Senior Frontend Developer',

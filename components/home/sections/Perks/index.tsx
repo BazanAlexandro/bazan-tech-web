@@ -27,7 +27,7 @@ const PerksSection = () => {
 	useEffect(() => {
 		if (inView) {
 			numberApi.start({
-				number: 7
+				number: 8
 			})
 			trailApi.start({
 				opacity: 1,
